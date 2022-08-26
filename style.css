@@ -1,0 +1,142 @@
+.container {
+    /* Agora que já vimos como agrupar e alinhar elementos com o eixo principal,
+    que neste exemplo é a linha. vamos alinhar e agrupar os elementos do container,
+    dessa caixa vermelha que tem todos os elementos, sobre o eixo perpendicular também,
+    que no caso é a coluna. Para isso, vamos definir uma altura para se trabalhar*/
+
+    height: 300px;
+    border: 5px solid red;
+    display: flex; /* aplicando o display flexível*/
+
+    /*O display flexível, flexbox, tem dois eixos. O principa e o perpendicular 
+    Ou seja, o eixo secundário.
+
+    Podemos definir o eixo principal como: linha (row) ou coluna (column), utilizando
+    flex-direction: veja abaixo:
+    */
+
+    flex-direction: row; /*tudo alinhado no eixo principal como linha*/
+    /*quando se define o eixo principal, o eixo secundario vira o seu oposto.
+    se o principal for linha, o secundario será coluna. se o principal for coluna
+    o secundário será linha*/
+
+    /*Feito isso, agora podemos alinhar os elementos de acordo com o eixo definido.
+    Para isso, vamos utilizar o atributo justify-content par alinhar os elementos 
+    do eixo principal*/
+
+    justify-content: center; /* os valor mais utilizados são: 
+    space-between: Adiciona espaçamento igual para todos os elementos
+    space-around: Adiciona espaçamento ao redor de todos os elementos de forma igual.
+    flex-start: Agrupa os itens todo no começo do eixo principal
+    flex-end: Agrupa os itens/elementos todos no final do eixo principal
+    center: Agrupa todos os elemento no centro do eixo principal */ 
+
+    
+    /*Agora, que voltamos ao container, podemos trabalhar com o atributo align-items 
+    para alinhar os elementos agrupador verticalmente(coluna)*/
+    align-items: center; /*Agora, todos os elementos estão agrupados ao centro, do
+    eixo perpendicular (vertical/coluna), veja as demais propriedas:
+    flex-start - agrupa todos no começo do eixo secundario/perpendicular
+    flex-end - agrupa todos os elementos no final do eixo secundario/perpendicular
+    center - agrupa todos os elementos no centro do eixo secundario/perpendicular
+    stretch - ocupa todo o espaço do eixo perpendicular definido, ou seja, a altura toda
+    baseline - utiliza a base do texto dentro do box para alinhar os elementos/agrupando
+    todos os elemento na mesma base (altura do texto da box)
+    */
+
+    /*Agora, que temos todos os elementos, agrupados no eixo principal e secundario,podemos
+    nos preocupar com layout mais complexos. para isso, vamos pensar que você tem mais 
+    informações do que caberia numa linha, já que seu eixo principal é a linha.
+    então, o que fazer? neste exemplo, vamos controlar a quebra de layout, quando o
+    conteúdo da linha passa do limite da página, com o atributo wrap do flex box*/
+
+    flex-wrap: wrap; /*Por padrão, o flexbox é definido como não quebre, ou seja
+    ele tenta ocupar o espaço, reduzindo os elementos para que todos caibam dentro do container
+    caso, não seja suficiente, ele quebra. a quebra do layout do container é dada pelo valor wrap
+    neste momento, houve a quebra, ou seja, a largura do continer que ocupava o tamanho todo da tela, não comportou todos os elementos. nestes casos, podemos definir como alinhar a quebra. podemos deixar seguindo o padrão, que é jogar o conteúdo que não coube para a próxima linha, ou inverter a ordem, que é deixar o elemento que iria para a próxima linha ficar acima dos demais, com 
+wrap-reverse */
+
+    /*Perceba que quando há quebra, o layout não fica agradável, ou seja, há um espaçamento muito grande
+    entre os elementos. então, para agrupá-los, podemos usar o align content (usado nestes casos em que o wrap acontecerá, 
+    caso alguém dimiua o tamanho da tela, ou o dispositivo que a página será carregada
+    é pequeno e com certeza, quebrará o texto. veja abaixo:*/
+    align-content: center; /*Agrupa os elementos quebrados do eixo secundário ao centro*/
+    /* demais atributos:
+    flex-start- agrupa todos os elementos quebrados, do layout quebrado, ao inicio do eixo secundario
+    flex-end - agrupa todos os elementos quebrados, do layout quebrado, ao final do eixo secundario
+    center
+    space-between - adiciona um espaçamento entre os elementos quebrados 
+    space-around - adiciona um espaçamento ao redor por padrão, do mesmo tamanho, separando os elementos quebrados
+    */
+
+    /*Para fechar, podemos criar espaçamento entre elementos com gap, atributo do flexbox*/
+    gap: 100px; /*Aqui o espaçamento é dado nos dois eixos(principal e secundario), 
+    ou seja, 100px no eixo principal, linha, entre cada elemento e 100px, no eixo secundario, na vertical, entre cada elemento*/
+
+    /*Agora, para visualizar o código melhor sem os comentário, veja como ele fica.*/
+}
+
+/*Para ficar mais interativo, vamos aplicar css as caixas que forma definidas
+    no arquivo html - Finalizado as definições das caixas (cores, largura(width) podemos
+    trabalhar com o agrupamento e alinhamento sobre o eixo perpendicular(coluna neste exemplo)*/
+
+#box-1 {
+    width: 100px;
+    background-color: green;
+}
+
+#box-2 {
+    width: 100px;
+    background-color: gray;
+}
+
+#box-3 {
+    width: 100px;
+    background-color: yellow;
+}
+
+#box-4 {
+    width: 100px;
+    background-color: rosybrown;
+}
+
+#box-5 {
+    width: 50px;
+    background-color: blue;
+}
+
+#box-6 {
+    width: 50px;
+    background-color: red;
+}
+
+#box-7 {
+    width: 50px;
+    background-color: pink;
+}
+
+#box-8 {
+    width: 50px;
+    background-color: purple;
+}
+
+#box-9 {
+    width: 50px;
+    background-color: black;
+    color: white;
+}
+
+#box-10 {
+    width: 50px;
+    background-color: orange;
+}
+
+#box-11 {
+    width: 50px;
+    background-color: gold;
+}
+
+#box-12 {
+    width: 50px;
+    background-color: lightseagreen;
+}
